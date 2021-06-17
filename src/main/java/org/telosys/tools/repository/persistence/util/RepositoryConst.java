@@ -106,6 +106,8 @@ public class RepositoryConst {
 	public final static String COLUMN = "column";
 	
 	public final static String COLUMN_SELECTED            = "selected";
+	public static final String COLUMN_UPDATABLE           = "updatable";
+	public static final String COLUMN_INSERTABLE          = "insertable";
 	
 	public final static String COLUMN_DB_NAME             = "dbName";
 	public final static String COLUMN_DB_TYPE_NAME        = "dbTypeName";

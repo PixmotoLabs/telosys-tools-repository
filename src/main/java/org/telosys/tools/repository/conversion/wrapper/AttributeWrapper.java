@@ -34,7 +34,9 @@ public class AttributeWrapper {
 		final AttributeInDbModel attributeInDbModel = new AttributeInDbModel(entity);
 
 		attributeInDbModel.setSelected(StrUtil.getBoolean(elem.getAttribute(RepositoryConst.COLUMN_SELECTED)));
-
+		attributeInDbModel.setUpdatable(StrUtil.getBoolean(elem.getAttribute(RepositoryConst.COLUMN_UPDATABLE), true));
+		attributeInDbModel.setInsertable(StrUtil.getBoolean(elem.getAttribute(RepositoryConst.COLUMN_INSERTABLE), true));
+		
 		//--- DATABASE INFOS
 		attributeInDbModel.setDatabaseName(elem.getAttribute(RepositoryConst.COLUMN_DB_NAME));
 		//column.setPrimaryKey(StrUtil.getBoolean(elem.getAttribute(RepositoryConst.COLUMN_DB_PRIMARY_KEY)));
@@ -133,6 +135,7 @@ public class AttributeWrapper {
 		//element.setAttribute(RepositoryConst.COLUMN_SELECTED, Boolean.toString(column.getSelected()));
 		element.setAttribute(RepositoryConst.COLUMN_SELECTED, Boolean.toString(attributeInDbModel.isSelected())); // v 3.0.0
 
+		
 		//--- DATABASE INFOS
 		element.setAttribute(RepositoryConst.COLUMN_DB_NAME, attributeInDbModel.getDatabaseName());
 		element.setAttribute(RepositoryConst.COLUMN_DB_NOTNULL, Boolean.toString(attributeInDbModel.isDatabaseNotNull()));

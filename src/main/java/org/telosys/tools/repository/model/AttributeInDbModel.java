@@ -139,6 +139,8 @@ public class AttributeInDbModel implements Comparable<AttributeInDbModel>, Seria
 	
 	private SequenceGeneratorInDbModel sequenceGenerator = null ;
 	
+	private boolean _bInsertable = true;
+	private boolean _bUpdatable = true;
 	
 	/**
 	 * Constructor
@@ -613,6 +615,21 @@ public class AttributeInDbModel implements Comparable<AttributeInDbModel>, Seria
 		_sInputType = s ;
 	}
 	
+	@Override
+	public boolean isInsertable() {
+		return _bInsertable;
+	}
+	public void setInsertable(boolean b) {
+		_bInsertable = b;
+	}
+	
+	@Override
+	public boolean isUpdatable() {
+		return _bUpdatable;
+	}
+	public void setUpdatable(boolean b) {
+		_bUpdatable = b;
+	}
 	//-----------------------------------------------------------------------------
 //	public boolean getLongText() {
 //		return _bLongText ;
